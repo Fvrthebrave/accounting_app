@@ -1,0 +1,20 @@
+{
+  "name": "accountingclientapp",
+  "version": "1.0.0",
+  "description": "Accounting App that automatically generates forms for clients that owe money on their payment plan.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Collin DeSoto",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.3",
+    "js-model": "^1.1.22",
+    "method-override": "^2.3.9",
+    "mongoose": "^4.11.5",
+    "mongoose-auto-increment": "^5.0.1",
+    "mongoose-paginate": "^5.0.3"
+  }
+}

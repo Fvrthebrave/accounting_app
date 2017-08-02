@@ -1,0 +1,19 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui header huge">Add New Client</div>
+    <form class="ui form" action="/clients" method="POST">
+        <div class="field">
+            <label>First Name</label>
+            <input type="text" name="client[firstName]" placeholder="Client first name" required>
+        </div>
+      <div class="field">
+            <label>Last Name</label>
+            <input type="text" name="client[lastName]" placeholder="Client last name" required>
+        </div>
+        <button class="ui button grey large" type="submit">Submit!</button>
+        <a href="/" class="ui button basic">Go back</a>
+    </form>
+</div>
+
+<% include ../partials/footer %>

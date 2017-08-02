@@ -1,0 +1,20 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment raised">
+    <h1>
+        <div class="ui middle center aligned header main">Client List</div>
+    </h1>
+    <h4>
+        <div class="ui center aligned header">Sorted by ID</div>
+    </h4>
+    <% clients.forEach(function(client){ %>
+        <a href="/clients/<%=client._id%>" class="spacer block ui button basic"><%=client.firstName %> <%=client.lastName %> ID: <%=client._id%></a>
+    <% }); %>
+    <div class="spacer">
+        <a href="/" class="ui button small blue">Go Back</a>
+        <a href="/clients/new" class="right floated ui button small">Add Another Client</a>
+    </div>
+
+</div>
+
+<% include ../partials/footer %>

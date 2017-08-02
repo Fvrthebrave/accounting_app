@@ -1,0 +1,42 @@
+body {
+    padding: 10%;
+}
+
+.block {
+    display: block !important;
+}
+
+.spacer {
+    margin-top: 15px !important;
+}
+
+.spacerBottom {
+    margin-bottom: 15px !important;
+}
+
+.hrStyleSep {
+	border-top: 1px dashed #8c8b8b;
+}
+
+.hrStyleTop {
+  height: 30px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 1px 0 0 0; 
+  border-radius: 20px; 
+}
+
+.hrStyleBottom {
+  display: block; 
+  content: ""; 
+  height: 30px; 
+  margin-top: -31px; 
+  border-style: solid; 
+  border-color: #8c8b8b; 
+  border-width: 0 0 1px 0; 
+  border-radius: 20px; 
+}
+
+.delete-form {
+    display: inline;
+}

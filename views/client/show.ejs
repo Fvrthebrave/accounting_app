@@ -1,0 +1,23 @@
+<% include ../partials/header %>
+
+<div class="ui main middle center aligned container grid">
+    <div class="ui twelve wide column segment raised">
+        <h1 class="ui header raised">
+            <div>
+                <%=client.firstName %> <%=client.lastName %>'s Profile
+            </div>
+        </h1>
+        <div class="ui items">
+            <h3 class="ui medium header item"><strong>Client ID: <%=client._id%></strong></span>
+        </div>
+        <hr class="hrStyleSep">
+        <div class="ui items">
+            <a class="ui button" href="/clients/<%=client._id%>/newPlan">Add Payment Plan</a>
+            <a class="ui button" href="/clients/<%=client._id%>/edit">Edit Client Info</a>
+            <a class="ui button red" href="/clients/<%=client._id%>/plan">View Agreement Information</a>
+            <a class="ui button blue" href="/">Go back</a>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

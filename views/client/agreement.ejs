@@ -1,0 +1,75 @@
+<% include ../partials/header %>
+
+<div class="ui main middle center aligned container relaxed grid">
+    <div class="ui twelve wide column segment raised aligned left">
+        <div class="ui middle center aligned grid">
+            <div class="ui items left aligned container">
+                <a class="ui button blue spacerBottom" href="/clients/<%= client._id %>/">Go back</a>
+            </div>
+        </div>
+        <h1 class="ui header raised">
+            <div>
+                <%=client.firstName %> <%=client.lastName %>'s Profile
+            </div>
+        </h1>
+        <div>
+            <a href="/clients/<%=client._id%>/newPlan" class="ui button basic">Add Payment Plan</a>
+            <a  href="/clients/<%= client._id %>/edit" class="ui button">Edit Client Info</a>
+        </div>
+        <div class="ui header medium items">
+            <h4 class="ui item"><strong>Client ID: <%=client._id%></strong></h4>
+        </div>
+        <div class="ui left aligned container">
+            <% client.plans.forEach(function(plan, index){ %>
+                <hr class="hrStyleTop spacer">
+                <h2 class="ui main header left aligned">Plan: <%=(index + 1)%></h2> 
+                <hr class="hrStyleSep">
+                    <div class="ui items">
+                        <label class="ui text">Full Amount: </label>
+                            <div class="ui items center aligned container">
+                                <span><%= plan.totalAmt %></span>
+                            </div>
+                    </div>
+                    <hr>
+                    <div class="ui items">
+                        <label class="ui text">Total amount left: </label>
+                        <div class="ui items center aligned container">
+                            <span><%= plan.amtDue %></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ui items">
+                        <label class="ui text">Total payments left in plan: </label>
+                        <div class="ui items center aligned container">    
+                            <span><%= plan.totalPmts %></span>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="ui items">
+                        <% if(plan.latePmts === undefined){ %>
+                            <label class="ui text">Total late payments: </label>
+                            <div class="ui items center aligned container">
+                                0
+                            </div>
+                        <% } else { %>
+                            <span>Total late payments: <%= plan.latePmts %></span>
+                        <% } %>
+                    <hr>
+                    <div class="ui items">
+                        <label class="ui text">Payoff date: </label>
+                        <div class="ui items center aligned container">
+                            <span><%= plan.dueDate.toDateString() %></span>
+                        </div>
+                    </div>
+                <a href="/clients/<%= client._id %>/<%= plan._id %>/edit"class="ui button blue">Edit Plan</a>
+                <form class="delete-form" action="/clients/<%=client._id%>/plan/<%=plan._id%>?_method=DELETE" method="POST">
+                    <input type="submit" class="ui button small red right floated" value="Delete Plan">
+                </form>
+                <hr class="hrStyleBottom spacer">
+                <br>
+            <% }); %>
+        </div>
+    </div>
+</div>
+
+<% include ../partials/footer %>

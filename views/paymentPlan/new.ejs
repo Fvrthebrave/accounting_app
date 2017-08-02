@@ -1,0 +1,27 @@
+<% include ../partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui header huge">Add New Payment Plan</div>
+    <form class="ui form" action="/clients/<%=client._id%>/plans" method="POST">
+        <div class="field">
+            <label>Total Amount</label>
+            <input type="text" name="plan[totalAmt]" placeholder="Total Amount Due" required>
+        </div>
+        <div class="field">
+            <label>Current Amount Due</label>
+            <input type="text" name="plan[amtDue]" placeholder="To-date Amount Due" required>
+        </div>
+        <div class="field">
+            <label>Payment Due Date</label>
+            <input type="date" name="plan[dueDate]" placeholder="Payment Due Date" required>
+        </div>
+        <div class="field">
+            <label>Total # of payments till paid off</label>
+            <input type="text" name="plan[totalPmts]" placeholder="Total # of payments" required>
+        </div>
+        <button class="ui button grey large" type="submit">Submit!</button>
+        <a class="ui button basic" href="/">Go back</a>
+    </form>
+</div>
+
+<% include ../partials/footer %>
