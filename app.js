@@ -18,7 +18,7 @@ app.use(methodOverride("_method"));
 //SeedDB();
 
 
-
+// READ
 // GET ROUTES *******************************
 app.get("/", function(req, res){
     res.render("home");
@@ -33,6 +33,34 @@ app.get("/clients/", function(req, res){
         }
     });
 
+});
+
+app.get("/clients/searchByName", function(req, res){
+   res.render('searchName'); 
+});
+
+app.get("/clients/searchById", function(req, res){
+   res.render('searchId');
+});
+
+app.post("/clients/results", function(req, res){
+    Client.find(req.body.client, function(err, clients){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("client/results", {clients: clients});
+       }
+    });
+});
+
+app.post("/clients/resultsID", function(req, res){
+   Client.findOne(req.body.client, function(err, client){
+       if(err){
+           console.log(err);
+       } else {
+           res.render("client/resultsID", {client: client});
+       }
+   });
 });
 
 app.get("/clients/new", function (req, res){
@@ -99,7 +127,6 @@ app.get("/clients/:id/:planId/edit", function(req, res){
 });
 
 //UPDATE
-// PUT ROUTES ******************************************************************
 app.put("/clients/:id", function(req, res){
    Client.findByIdAndUpdate(req.params.id, req.body.client, function(err, client){
        if(err){
@@ -124,7 +151,6 @@ app.put("/clients/:id/plans/:planId", function(req, res){
 });
 
 // CREATE
-// POST ROUTES ****************************************************************
 app.post("/clients", function(req, res){
     Client.create(req.body.client, function(err, newClient){
        if(err){

@@ -1,0 +1,21 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui header huge">
+        Search by Name
+    </div>
+    <form class="ui form" action="/clients/results" method="POST">
+        <div class="ui field">
+            <input type="text" name="client[firstName]" placeholder="First Name" required>
+        </div>
+        <div class="ui field">
+            <input type="text" name="client[lastName]" placeholder="Last Name" required>
+        </div>
+        <a class="ui button red" href="/">Go Back</a>
+        <button class="ui button blue right floated">Search!</button>
+    </form>
+</div>
+
+
+
+<% include ./partials/footer %>
