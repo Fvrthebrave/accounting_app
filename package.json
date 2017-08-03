@@ -9,12 +9,19 @@
   "author": "Collin DeSoto",
   "license": "ISC",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "ejs": "^2.5.7",
     "express": "^4.15.3",
+    "express-sanitizer": "^1.0.2",
+    "express-session": "^1.15.4",
     "js-model": "^1.1.22",
     "method-override": "^2.3.9",
+    "mongodb": "^2.2.30",
     "mongoose": "^4.11.5",
     "mongoose-auto-increment": "^5.0.1",
-    "mongoose-paginate": "^5.0.3"
+    "mongoose-paginate": "^5.0.3",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "passport-local-mongoose": "^4.0.0"
   }
 }

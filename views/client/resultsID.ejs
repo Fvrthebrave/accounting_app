@@ -7,14 +7,10 @@
     </div>
     <hr>
         <div class="ui content">
-            <% if (client === null){ %>
-                <h1 class="ui huge header red">Client was not found!</h1>
-            <% } else { %>
             <li class="spacer ui link list">
                 <a class="ui item" href="/clients/<%= client._id %>/"><%= client.firstName %> <%= client.lastName %></a>
                 <hr class="hrStyleSep">
             </li>
-            <% } %>
             <div class="ui right aligned">
                 <a href="/clients/searchById" class="ui button red">Go Back</a>
             </div>

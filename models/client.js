@@ -7,7 +7,9 @@ autoIncrement.initialize(connection);
 
 var clientSchema = new mongoose.Schema({
     firstName: String,
+    lowerFirstName: String,
     lastName: String,
+    lowerLastName: String,
     clientId: Number,
     
     plans: [
