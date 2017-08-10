@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
     </head>
     
-    <body>
+    <body id="body">
         <div id="menu" class="ui massive fixed menu">
             <div class="container">
                 <div class="header item"><i class="code icon"></i>Client Database</div>
@@ -15,8 +15,8 @@
             <div class="right menu">
                 <% if(!currentUser){ %>
                 <!--only when logged out-->
-                    <a class="active item blue" href="/login"><i class="user circle icon"></i>Login</a>
-                    <a class="active item" href="/register"><i class="add user icon"></i>Register</a>
+                    <a class="ui item" href="/login"><i class="user circle icon"></i>Login</a>
+                    <a class="ui active item" href="/register"><i class="add user icon"></i>Register</a>
                 <% } else { %>
                 <!--only when logged in-->
                     <a class="item" href="#"><i class="user circle outline icon"></i><%= currentUser.username.toUpperCase() %></a>

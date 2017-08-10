@@ -1,5 +1,7 @@
 body {
     padding: 5%;
+    background-color: aliceblue;
+    transition: all 1s ease-in;
 }
 
 .block {

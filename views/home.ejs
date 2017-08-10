@@ -1,15 +1,15 @@
 <% include ./partials/header %>
 
-<div class="spacer ui middle aligned center aligned grid">
-    <div class="ui divided items segment center aligned eight wide column">
+<div class="spacer ui middle aligned center aligned  raised grid fadeIn">
+    <div id="addItem" class="ui divided items segment center aligned eight wide column raised">
             <h1 class="ui centered black header">
-                <div><i class="users icon"></i>Client Portal</div>
+                <div><i id="home" class="users icon"></i>Client Portal</div>
             </h1>
                 <div class="ui two wide column">
-                        <a class="block spacer ui blue inverted button massive" href="/clients">Client List</a>
-                        <a class="block spacer ui blue inverted button massive" href="/clients/searchByName">Find client by name</a>
-                        <a class="block spacer ui blue inverted button massive" href="/clients/searchById">Find client by ID</a>
-                        <a class="block spacer ui blue button massive" href="/clients/new">Add Client</a>
+                        <a class="block spacer ui blue inverted button massive" href="/clients"><i class="list icon small"></i>Client List</a>
+                        <a class="block spacer ui blue inverted button massive" href="/clients/searchByName"><i class="search icon small"></i>Find client by name</a>
+                        <a class="block spacer ui blue inverted button massive" href="/clients/searchById"><i class="zoom icon small"></i>Find client by ID</a>
+                        <a class="block spacer ui blue button massive" href="/clients/new"><i class="plus icon small"></i>Add Client</a>
                 </div>
         </div>
     </div>

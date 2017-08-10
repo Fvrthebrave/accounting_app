@@ -8,6 +8,9 @@ var express         = require("express"),
     methodOverride  = require("method-override"),
     Client          = require("./models/client.js"),
     User            = require("./models/user.js");
+
+    
+    
     
 var app = express();
 mongoose.connect("mongodb://localhost/accounting_app");
