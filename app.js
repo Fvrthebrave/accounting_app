@@ -13,7 +13,9 @@ var express         = require("express"),
     
     
 var app = express();
-mongoose.connect("mongodb://localhost/accounting_app");
+
+// Set through export DATABASEURL=mongodb://localhost/db_name
+mongoose.connect(process.env.DATABASEURL);
 
 var clientRoutes = require("./routes/clients"),
     planRoutes   = require("./routes/plans"),
