@@ -4,6 +4,7 @@ var express = require("express"),
     middleware = require("../middleware");
     
 
+// READ ROUTES
 router.get("/clients", middleware.isLoggedIn, function(req, res){
     Client.find({}, function(err, clients){
        if(err){
@@ -83,8 +84,6 @@ router.get("/clients/:id/newPlan", middleware.isLoggedIn, function(req, res){
     });
 });
 
-// EDIT ROUTES *************************************************************
-
 router.get("/clients/:id/edit", middleware.isLoggedIn, function(req, res){
     Client.findById(req.params.id, function(err, client){
         if(err){
@@ -96,6 +95,7 @@ router.get("/clients/:id/edit", middleware.isLoggedIn, function(req, res){
 });
 
 
+// EDIT ROUTES *************************************************************
 //UPDATE
 router.put("/clients/:id", middleware.isLoggedIn, function(req, res){
    Client.findByIdAndUpdate(req.params.id, req.body.client, function(err, client){
@@ -109,7 +109,7 @@ router.put("/clients/:id", middleware.isLoggedIn, function(req, res){
 });
 
 
-// CREATE
+// CREATE ROUTES
 router.post("/clients", middleware.isLoggedIn, function(req, res){
     Client.create(req.body.client, function(err, newClient){
        if(err){

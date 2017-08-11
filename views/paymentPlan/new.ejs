@@ -5,11 +5,11 @@
     <form class="ui form" action="/clients/<%=client._id%>/plans" method="POST">
         <div class="field">
             <label>Total Amount</label>
-            <input type="text" name="plan[totalAmt]" placeholder="Total Amount Due" required>
+            <input type="number" name="plan[totalAmt]" placeholder="Total Amount Due" min="0.00" step="0.01" required>
         </div>
         <div class="field">
             <label>Current Amount Due</label>
-            <input type="text" name="plan[amtDue]" placeholder="To-date Amount Due" required>
+            <input type="number" name="plan[amtDue]" placeholder="To-date Amount Due" min="0.00" step="0.01" required>
         </div>
         <div class="field">
             <label>Payment Due Date</label>
@@ -17,9 +17,9 @@
         </div>
         <div class="field">
             <label>Total # of payments till paid off</label>
-            <input type="text" name="plan[totalPmts]" placeholder="Total # of payments" required>
+            <input type="number" name="plan[totalPmts]" placeholder="Total # of payments" required>
         </div>
-        <button class="ui button grey large" type="submit">Submit!</button>
+        <button class="ui button grey" type="submit">Submit!</button>
         <a class="ui button basic" href="/">Go back</a>
     </form>
 </div>
