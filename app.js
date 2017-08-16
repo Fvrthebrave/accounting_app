@@ -17,6 +17,7 @@ var app = express();
 // Set through export DATABASEURL=mongodb://localhost/db_name
 mongoose.connect(process.env.DATABASEURL);
 
+
 var clientRoutes = require("./routes/clients"),
     planRoutes   = require("./routes/plans"),
     authRoutes   = require("./routes/index");
