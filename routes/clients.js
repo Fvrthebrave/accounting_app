@@ -24,7 +24,9 @@ router.get("/clients/searchById", middleware.isLoggedIn, function(req, res){
 });
 
 router.post("/clients/results", function(req, res){
-    Client.find({lowerFirstName: req.body.firstName.toLowerCase(), lowerLastName: req.body.lastName.toLowerCase()}, function(err, clients){
+    Client.find({lowerFirstName: {$regex: req.body.firstName.toLowerCase()}, 
+                 lowerLastName: {$regex: req.body.lastName.toLowerCase()}}, 
+                 function(err, clients){
         console.log(clients);
         if(err){
            console.log(err);
