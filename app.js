@@ -11,7 +11,6 @@ var express         = require("express"),
     app = express();
 
 mongoose.connect(process.env.DATABASEURL);
-console.log(process.env.DATABASEURL);
 
 
 var clientRoutes = require("./routes/clients"),
