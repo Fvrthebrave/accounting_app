@@ -19,7 +19,7 @@
     "js-model": "^1.1.22",
     "method-override": "^2.3.9",
     "mongodb": "^2.2.33",
-    "mongoose": "^4.11.5",
+    "mongoose": "^4.12.6",
     "mongoose-auto-increment": "^5.0.1",
     "mongoose-paginate": "^5.0.3",
     "passport": "^0.3.2",
